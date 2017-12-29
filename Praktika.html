@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Paskaita</title>
+	<link rel="stylesheet" href="normalize.css">
+	<link rel="stylesheet" href="skeleton.css">
+	<link rel="stylesheet" href="styles.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.js"></script>
+</head>
+<body>
+<div class="container" id="app">
+		<h1>Muzikos albumas</h1>
+		<h2> {{ message }}</h2>
+		<strong>Rodyti paveiksliukus</strong>
+
+	<div class="u-cf">
+		<label>
+		<input type="radio" name="image-visibility" v-bind:value = "true" v-model = "isVisible">
+		Taip
+		</label>
+		<label>
+		<input type="radio" name="image-visibility" v-bind:value = "false" v-model = "isVisible">
+		Ne
+		</label>
+	</div>
+	
+	<table>
+		<tr v-for="album in albums">
+		<td v-if="isVisible"> 
+			<img v-bind:src="'Pictures/'+album.image" alt="Album cover">
+		</td>
+		<td>
+			<strong>{{album.artist}} </strong>
+		</td>
+		<td>
+			<strong>{{album.album}}</strong>
+		</td>
+		<td>
+			{{album.genre}}
+		</td>
+		<td>
+			{{album.date}}
+		</td>
+		</tr>
+	</table>
+</div>
+<script src="DB.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

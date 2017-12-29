@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Anketa</title>
+	<link rel="stylesheet" href="normalize.css">
+	<link rel="stylesheet" href="skeleton.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.js"></script>
+</head>
+<body>
+
+<div id="duomenys">
+	<h4> Iveskite savo duomenis: </h4>
+	<form id="nforma" action="/action_page.php" >
+	  Vardas:  <input type="text" v-model = "vardas">
+	  Pavarde:  <input type="text" v-model = "pavarde">
+	  Metai: <input type="text" v-model = "metai">
+	  <br>
+	  <div>
+		Name: {{vardas}}  {{pavarde}} {{metai}} metai, 
+		<span v-if="metai>=18">Pilnametis</span>
+		<span v-else-if="metai == 'Unknown'">Unknown</span>
+		<span v-else>Nepilnametis</span>
+	</div>
+	</form>
+
+</div>
+
+<script src="Anketa.js"></script>
+
+
+</body>
+</html>
