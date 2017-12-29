@@ -1,11 +1,16 @@
 new Vue({
 	el: "#duomenys",
 	data: {
-		//asmuo: JSON_DATA.asmuo,
 
 		vardas: "",
 		pavarde: "",
 		metai: "",
+		checked: []
+	},
+	methods: {
+		greet: function(name){
+			alert("Greetings " + name);
+		}
 	}
 })
 

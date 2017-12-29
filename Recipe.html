@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Receptai</title>
+	<link rel="stylesheet" href="normalize.css">
+	<link rel="stylesheet" href="skeleton.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.js"></script>
+</head>
+<body>
+
+<div class="container" id="recepies">
+
+	<label for = "A">
+		<input type="checkbox" value="Cukrus" v-model = "checked">
+		Cukrus
+	</label>
+	<label for = "B">
+		<input type="checkbox" value="Kiausiniai" v-model = "checked">
+		Kiausiniai
+	</label>
+
+	<span>{{checked}}</span>
+
+	<table>
+	<tr v-for = "i in recipes">
+		<td>
+			<img v-bind:src="'Pictures/'+i.pic" alt="Album cover" width="400px">
+		</td>
+		<td>
+			{{i.name}}
+		</td>
+		<td>
+		<li v-for = "j in i.ingredients">
+			{{j}}
+		</li>
+		</td>
+		<td>
+			{{i.preparation}}
+		</td>
+
+		<td>
+			{{i.servings}}
+		</td>
+	</tr>
+	</table>
+
+<button type="button" style="margin-left: 50px" v-on:click = "greet(name)">Greetings</button>
+</div>
+
+<script src="Recipe.js"></script>
+<script src="Recipe-JQ.js"></script>
+</body>
+</html>

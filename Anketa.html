@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<div id="duomenys">
+<div id="duomenys" style="margin: 50px">
 	<h4> Iveskite savo duomenis: </h4>
 	<form id="nforma" action="/action_page.php" >
 	  Vardas:  <input type="text" v-model = "vardas">
@@ -22,6 +22,22 @@
 		<span v-else>Nepilnametis</span>
 	</div>
 	</form>
+
+	<button type="button" style="margin-left: 50px" v-on:click = "greet(vardas)">Greetings</button>
+
+	<label for = "A">
+		<input type="checkbox" value="A" v-model = "checked">
+		A
+	</label>
+	<label for = "B">
+		<input type="checkbox" value="B" v-model = "checked">
+		B
+	</label>
+	<label for = "C">
+		<input type="checkbox" value="C" v-model = "checked">
+		C
+	</label>
+	<span>{{checked}}</span>
 
 </div>
 
